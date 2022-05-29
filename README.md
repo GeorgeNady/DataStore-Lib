@@ -8,6 +8,7 @@
 def kotlin_version = "1.5.2" // latest kotlin version
 def datastore_version = "1.0.0-alpha04" // use this version
 def lifecycle_version = "2.4.1" // latest lifecycle version
+def koin_version = "3.2.0"
 
 // Preferences DataStore
 implementation "androidx.datastore:datastore-preferences:$datastore_version"
@@ -42,10 +43,10 @@ const val KEY2 = preferencesKey<Int>("key2")
 suspend fun <T> Context.savePrefs(prefsKey: Preferences.Key<T>, value: T)
 
 // Save Bulk Prefs
- suspend fun <T> Context.saveBulkPrefs(vararg keyValuePairs: Pair<Preferences.Key<T>, T>)
+suspend fun <T> Context.saveBulkPrefs(vararg keyValuePairs: Pair<Preferences.Key<T>, T>)
  
- // Read Prefs
- suspend fun <T> Context.readPrefs(prefsKey: Preferences.Key<T>): T?
+// Read Prefs
+suspend fun <T> Context.readPrefs(prefsKey: Preferences.Key<T>): T?
 ```
 
 
